@@ -1,0 +1,12 @@
+
+<form (ngSubmit)="onSubmit()" #chat="ngForm">
+	<div *ngFor="let c of chats | async">
+		<div class="chat-item">
+			<div class="chat-author">{{c?.from?.name}}</div>
+			<span class="chat-message">{{c.text}}</span>
+		</div>
+	</div>
+
+	<input id="text" name="text" type="text" [(ngModel)]="model.text"/>
+	<button type="submit">Send</button>
+</form>
