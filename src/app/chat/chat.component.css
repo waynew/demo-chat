@@ -1,0 +1,52 @@
+
+.chat-item {
+	margin: 1em 0;
+}
+
+.chat-thumbnail {
+	border-radius: 50%;
+	width: 4em;
+}
+
+.chat-name {
+	font-size: 50%;
+	color: #aaa;
+	margin-top: 0.5ex;
+}
+
+.chat-message-group {
+	margin: 1em;
+
+}
+
+.chat-message {
+	padding: 1ex;
+	background: #eee;
+	border-radius: 1em;
+	/*min-width: 10em;*/
+}
+
+.chat-author-group {
+
+}
+
+.author-thumbnail {
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+
+.chat-control {
+	padding: 1.5em 1.5em;
+	border-top: 1px solid #aaa;
+	background: #eee;
+}
+
+.chat-control .form-group {
+	margin: 0;
+}
+
+.chat-stream {
+	padding: 0 1.5em;
+	max-height: 60vh;
+	overflow-y: scroll;
+}

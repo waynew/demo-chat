@@ -2,7 +2,7 @@
 import {IFrom} from './from'
 
 export interface IChat {
-	message: string;
-	from: IFrom;
+	text: string;
+	from: Object;
 	dateCreated: any;
 }

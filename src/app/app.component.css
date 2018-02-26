@@ -1,0 +1,52 @@
+
+body, h1, h2, h3, h4, h5, h6, p, a, .app-chrome {
+	font-family: 'Poppins', sans-serif;
+}
+
+.app-chrome {
+	border-radius: 3em;
+	border: 1px solid #aaa;
+	margin: 2em 0em;
+	overflow: hidden;
+}
+
+.nav-pills .nav-item a {
+	height: 3em;
+	border-radius: 0;
+	margin: 2pt;
+	border: 2px solid #aaa;
+}
+
+.nav-pills .nav-item:first-child a {
+	border-top-left-radius: 3em;
+}
+
+.nav-pills .nav-item:last-child a {
+	border-top-right-radius: 3em;
+}
+
+.app-header {
+	/*height: 3em;*/
+	padding: 1em 1.5em;
+	border-bottom: 1px solid #aaa;
+}
+
+.app-title {
+	margin:0;
+	font-weight: bold;
+}
+
+.app-title a {
+	color: #888;
+	text-decoration: underline;
+}
+
+.app-title a:hover {
+	color: black;
+}
+
+.chevron {
+	margin-left:0.5em;
+	display: inline-block;
+	color: #aaa;
+}
