@@ -4,9 +4,11 @@ Welcome! This is our little test-project, which replicates some aspects of our p
 
 Currently the codebase runs a basic Firestore backed Angular 5 chat application.
 
+<a href="https://sketchdeck.github.io/demo-chat/">
 <img src="https://sketchdeck.github.io/demo-chat/preview.png">
+</a>
 
-[Try the app here](https://sketchdeck.github.io/demo-chat/)
+[See the online demo](https://sketchdeck.github.io/demo-chat/)
 
 The goal of this exercise is to add a feature to the chatroom. This will need a bit of backend and frontend code.
 
