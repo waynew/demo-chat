@@ -19,6 +19,17 @@ This exercise is designed to take 1 - 2 days.
 
 The goal is to add <kbd>@mentions</kbd> to our chat. This should look, feel and work just like Slack's version of the feature. They've done a great job of implementing theirs and more or less found the optimal design. 
 
+### Working with us
+
+We like to work in a collaborative, communicative manner. We'll invite you to our Slack #tech room. We expect you to:
+- Ask us questions to clarify things you're uncertain about
+- If you get stuck on something, ask us for help
+- Collaborate with us if there's a skill you lack
+- Communicate your timeline to us and give realistic estimates of when you'll hit key milestones (e.g. proof of concept, first draft, final version)
+- Preview your work (UX / code / demos) early and often so we can provide helpful guidance and know how it's going
+- Give a little video-demo to the tech team at the end showing the feature in action and your code
+
+
 ### Specification
 
 Your solution should do the following:
