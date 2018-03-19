@@ -42,3 +42,8 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+*.sw[a-p]
+
+# Not sure if this should be ignored
+package-lock.json

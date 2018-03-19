@@ -76,6 +76,10 @@ export class ChatComponent implements OnInit, AfterViewChecked
    
   }
 
+  checkText(event) {
+    // TODO should this send events to the mentions service or something?
+  }
+
   public tracker(index, item):any {
     return item.$id;
   }

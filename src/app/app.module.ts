@@ -15,6 +15,8 @@ import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { ChatComponent } from './chat/chat.component';
 import { DataService } from './data.service';
+import { MentionsComponent } from './mentions/mentions.component';
+import { NicksService } from './nicks.service';
 
 
 @NgModule({
@@ -27,8 +29,8 @@ import { DataService } from './data.service';
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule // imports firebase/storage only needed for storage features
   ],
-  providers: [DataService],
-  declarations: [ AppComponent, ChatComponent ],
+  providers: [DataService, NicksService],
+  declarations: [ AppComponent, ChatComponent, MentionsComponent ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {}
