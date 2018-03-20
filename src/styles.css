@@ -4,3 +4,7 @@
   background-color: #ccf;
   border-radius: 2px;
 }
+
+.autocomplete-item img {
+  border-radius: 50%;
+}

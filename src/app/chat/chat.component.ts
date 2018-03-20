@@ -11,6 +11,7 @@ import * as firebase from 'firebase';
 import { IChat } from '../../model/chat';
 import { DataService } from '../data.service';
 import { NicksService } from '../nicks.service';
+import { connectSearchBox } from 'instantsearch.js/es/connectors';
 
 // class Chat implements IChat {}
 
@@ -65,11 +66,23 @@ export class ChatComponent implements OnInit, AfterViewChecked
   ngOnInit() {
     this.user$.first().subscribe( (u) => this.userObject = u );
     this.scrollToBottom();
+
+    const widget = connectSearchBox(this.updateState);
+    this.nickService.search.addWidget(widget());
   }
 
   ngAfterViewChecked() {        
     this.scrollToBottom();        
   } 
+
+  updateState = (state, isFirstRendering) => {
+    if (isFirstRendering) {
+      return Promise.resolve(null).then(() => {
+        this.state = state;
+      });
+      this.state = state;
+    }
+  };
 
   onSubmit() {
 
@@ -84,15 +97,9 @@ export class ChatComponent implements OnInit, AfterViewChecked
   }
 
   checkText(event) {
-    if (this.model.text.indexOf(' ') > 0){
-      this.nickService.search.helper.setQuery('').search({
-        searchParameters: {'hitsPerPage': 0},
-      });
-    }
-    else if (this.model.text[0] == '@' && this.model.text.length > 3){
-      this.nickService.search.helper.setQuery(this.model.text.slice(1, this.model.text.length)).search({
-        searchParameters: {'hitsPerPage': 7}
-      });
+    if (this.model.text && this.model.text[0] == '@' && this.model.text.length > 3){
+      var query = this.model.text.slice(1, this.model.text.length);
+      this.nickService.search.helper.setQuery(query).search();
     }
   }
 

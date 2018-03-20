@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NicksService } from '../nicks.service';
+import { connectHits } from 'instantsearch.js/es/connectors';
 
 
 @Component({
@@ -8,28 +9,34 @@ import { NicksService } from '../nicks.service';
   styleUrls: ['./mentions.component.css']
 })
 export class MentionsComponent implements OnInit {
-  @Input() partial_nick: String;
+  @Input() current_text: String;
   state: { hits: {}[]} = { hits: []};
 
   constructor(public nickService: NicksService) { }
 
   hasPartialNick(){
-    if (typeof this.partial_nick !== 'undefined'){
-      if (this.partial_nick.indexOf(' ') > 0){
+    if (typeof this.current_text !== 'undefined'){
+      if (this.current_text.indexOf(' ') > 0){
         return false;
       }
-      return this.partial_nick[0] == '@' && this.partial_nick.length > 3;
+      return this.current_text[0] == '@' && this.current_text.length > 3;
     }
   }
 
   ngOnInit() {
-    var mentions = this;
-		this.nickService.search.addWidget({
-			render: function(opts) {
-        console.log(opts.results.hits);
-        mentions.state.hits = opts.results.hits;
-			}
-		});
+    const widget = connectHits(this.updateState);
+    this.nickService.search.addWidget(widget());
     this.nickService.search.start();
+  }
+
+  updateState = (state, isFirstRendering) => {
+    if (isFirstRendering){
+      return Promise.resolve().then(() => {
+        this.state = state;
+      });
+    }
+    else {
+      this.state = state;
+    }
   }
 }

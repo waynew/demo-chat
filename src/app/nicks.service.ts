@@ -1,4 +1,4 @@
-import { Injectable, EventEmitter, Output, OnInit } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import instantsearch from 'instantsearch.js/es';
@@ -12,18 +12,6 @@ export class NicksService implements OnInit {
     searchParameters: {'hitsPerPage': 7},
   });
 
-  @Output() results: EventEmitter<any> = new EventEmitter();
-
   constructor() { }
 
-  ngOnInit(){
-    var svc = this;
-    this.search.addWidget({
-      render: function(opts) {
-        svc.results.emit(opts.results.hits);
-      }
-    });
-    this.search.start();
-    this.search.searchParameters.hitsPerPage = 7;
-  }
 }

@@ -1,5 +1,4 @@
-<!--<div *ngIf="hasPartialNick()" class="autocomplete">-->
-<div class="autocomplete">
-  <div id="hits" class="hits"></div>
-  <div *ngFor="let hit of state.hits" class="autocomplete-item" style="border-color: green" [innerHTML]="hit._highlightResult.username.value"></div>
+<div *ngIf="hasPartialNick()" class="autocomplete">
+  <div *ngFor="let hit of state.hits" class="autocomplete-item" style="border-color: green"><img src="{{ hit.photo }}"><span [innerHTML]="hit._highlightResult.username.value"></span></div>
+  <div *ngIf="state.hits.length == 0">No results found</div>
 </div>
