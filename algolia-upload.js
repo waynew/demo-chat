@@ -22,6 +22,7 @@ for(var i = 0; i < users.length; i++){
         'username': username,
         'first_name': user.name.first,
         'last_name': user.name.last,
+        'photo': user.picture.thumbnail,
     };
     users_by_id[username] = userdata;
 }
