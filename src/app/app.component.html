@@ -1,20 +1,5 @@
 
 
-    <ng-ais-instantsearch
-      [config]="{
-        apiKey: '8a4b15ad01cd143aef0a0583bcae9a4a',
-        appId: 'NF028XNY4U',
-        indexName: 'sketchdeck_chat_users'
-      }">
-      <ng-ais-hits>
-        <ng-template let-hits="hits">
-          <div *ngFor="let hit of hits">
-            Hit {{ hit.first_name }} {{ hit.last_name }} &lt;{{hit.username}}&gt;
-            <ng-ais-highlight attribute="username" [hit]="hit.username == 'jen.cole'"></ng-ais-highlight>
-          </div>
-        </ng-template>
-      </ng-ais-hits>
-    </ng-ais-instantsearch>
 <div class="container">
 	<div class="app-chrome">
 		<div class="app-header">

@@ -17,8 +17,7 @@ import { ChatComponent } from './chat/chat.component';
 import { DataService } from './data.service';
 import { MentionsComponent } from './mentions/mentions.component';
 import { NicksService } from './nicks.service';
-import { NgAisModule } from 'angular-instantsearch';
-
+import { NgAisModule, NgAisInstantSearch } from 'angular-instantsearch';
 
 @NgModule({
   imports: [
@@ -31,7 +30,7 @@ import { NgAisModule } from 'angular-instantsearch';
     AngularFireStorageModule, // imports firebase/storage only needed for storage features
     NgAisModule.forRoot(),
   ],
-  providers: [DataService, NicksService],
+  providers: [DataService, NicksService, NgAisInstantSearch],
   declarations: [ AppComponent, ChatComponent, MentionsComponent ],
   bootstrap: [ AppComponent ]
 })

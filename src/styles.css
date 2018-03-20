@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+.autocomplete-item em {
+  font-style: normal;
+  background-color: #ccf;
+  border-radius: 2px;
+}

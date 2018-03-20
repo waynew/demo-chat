@@ -1,4 +1,5 @@
 <!--<div *ngIf="hasPartialNick()" class="autocomplete">-->
 <div class="autocomplete">
-  <div *ngFor="let nick of nicks" class="autocomplete-item">{{ nick }}</div>
+  <div id="hits" class="hits"></div>
+  <div *ngFor="let hit of state.hits" class="autocomplete-item" style="border-color: green" [innerHTML]="hit._highlightResult.username.value"></div>
 </div>
