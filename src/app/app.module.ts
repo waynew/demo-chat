@@ -17,6 +17,7 @@ import { ChatComponent } from './chat/chat.component';
 import { DataService } from './data.service';
 import { MentionsComponent } from './mentions/mentions.component';
 import { NicksService } from './nicks.service';
+import { NgAisModule } from 'angular-instantsearch';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { NicksService } from './nicks.service';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
-    AngularFireStorageModule // imports firebase/storage only needed for storage features
+    AngularFireStorageModule, // imports firebase/storage only needed for storage features
+    NgAisModule.forRoot(),
   ],
   providers: [DataService, NicksService],
   declarations: [ AppComponent, ChatComponent, MentionsComponent ],
