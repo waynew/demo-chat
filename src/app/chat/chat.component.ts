@@ -31,6 +31,7 @@ export class ChatComponent implements OnInit, AfterViewChecked
   userObject: Object;
 
   @Output() changed: EventEmitter<any> = new EventEmitter();
+  state: { hits: {}[]} = { hits: []};
 
   @ViewChild('chatStream') private container: ElementRef;
 
