@@ -4,7 +4,7 @@ import { of } from 'rxjs/observable/of';
 import instantsearch from 'instantsearch.js/es';
 
 @Injectable()
-export class NicksService implements OnInit {
+export class NicksService {
   search = instantsearch({
     apiKey: '8a4b15ad01cd143aef0a0583bcae9a4a',
     appId: 'NF028XNY4U',
