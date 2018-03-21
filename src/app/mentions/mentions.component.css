@@ -2,6 +2,13 @@
   position: absolute;
   bottom: 100%;
   z-index: 1000;
-  border: thin blue solid;
+  border: thin grey solid;
   background-color: white;
+  box-shadow: 10px 5px 5px black;
+}
+
+img {
+  border-radius: 50%;
+  height: 1.2em;
+  margin-right: 0.25em;
 }
