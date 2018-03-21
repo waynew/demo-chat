@@ -12,3 +12,14 @@ img {
   height: 1.2em;
   margin-right: 0.25em;
 }
+
+.tip {
+  font-style: italic;
+  color: darkgrey;
+  border-bottom: thin lightgray dashed;
+  margin-bottom: 0.1em;
+}
+
+.autocomplete-item:hover {
+  cursor: pointer;
+}

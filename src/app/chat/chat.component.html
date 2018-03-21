@@ -24,8 +24,8 @@
 					<div class="input-group-prepend">
 						<img [src]="userObject?.picture.thumbnail" class="author-thumbnail"/>
 					</div>
-          <app-mentions [current_text]="model.text"></app-mentions>
-          <input id="message" name="message" type="text" [(ngModel)]="model.text" class="form-control" (keyup)="checkText($event)" autocomplete="off"/>
+          <app-mentions [current_text]="model.text" (selected_nick)="setNickHandler($event)"></app-mentions>
+          <input #message id="message" name="message" type="text" [(ngModel)]="model.text" class="form-control" (keyup)="checkText($event)" autocomplete="off"/>
 				<div class="input-group-append">
 					<button type="submit" class="btn btn-primary btn-success">Send</button>
 				</div>

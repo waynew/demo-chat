@@ -34,6 +34,7 @@ export class ChatComponent implements OnInit, AfterViewChecked
   state: { hits: {}[]} = { hits: []};
 
   @ViewChild('chatStream') private container: ElementRef;
+  @ViewChild('message') private message: ElementRef;
 
   resetModel(){
   	this.model = {} as IChat;
@@ -70,10 +71,12 @@ export class ChatComponent implements OnInit, AfterViewChecked
 
     const widget = connectSearchBox(this.updateState);
     this.nickService.search.addWidget(widget());
+
   }
 
   ngAfterViewChecked() {        
     this.scrollToBottom();        
+    this.setMessageFocus();
   } 
 
   updateState = (state, isFirstRendering) => {
@@ -108,7 +111,12 @@ export class ChatComponent implements OnInit, AfterViewChecked
     return item.$id;
   }
 
-  
+  setNickHandler(selected_nick){
+      this.model.text = '@' + selected_nick + ' ';
+      this.setMessageFocus();
+  }
 
-
+  setMessageFocus(): void {
+    this.message.nativeElement.focus();
+  }
 }

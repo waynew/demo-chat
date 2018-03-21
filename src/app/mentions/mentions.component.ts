@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { NicksService } from '../nicks.service';
 import { connectHits } from 'instantsearch.js/es/connectors';
 
@@ -10,6 +10,7 @@ import { connectHits } from 'instantsearch.js/es/connectors';
 })
 export class MentionsComponent implements OnInit {
   @Input() current_text: String;
+  @Output() selected_nick: EventEmitter<String> = new EventEmitter():
   state: { hits: {}[]} = { hits: []};
 
   constructor(public nickService: NicksService) { }
@@ -38,5 +39,9 @@ export class MentionsComponent implements OnInit {
     else {
       this.state = state;
     }
+  }
+
+  setNick(user) {
+    this.selected_nick.emit(user.username);
   }
 }
