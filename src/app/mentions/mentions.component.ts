@@ -10,7 +10,7 @@ import { connectHits } from 'instantsearch.js/es/connectors';
 })
 export class MentionsComponent implements OnInit {
   @Input() current_text: String;
-  @Output() selected_nick: EventEmitter<String> = new EventEmitter():
+  @Output() selected_nick: EventEmitter<String> = new EventEmitter();
   state: { hits: {}[]} = { hits: []};
 
   constructor(public nickService: NicksService) { }
